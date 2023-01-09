@@ -1,18 +1,15 @@
 
-@import url(https://fonts.google.com/specimen/Josefin+Sans);
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600&display=swap");
 body{
     background-image: url('../images/bg-pattern-desktop.svg'),
     linear-gradient(135deg, hsl(0, 0%, 100%), to hsl(0, 100%, 98%));
-    /* overflow: hidden; */
     font-family: 'Josefin Sans', sans-serif;
     font-size: 16px;
-    
- 
 }
-footer{
-    position:fixed;
-    bottom: 0;  
-    margin-left: 35%;
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 .mylogo{
@@ -21,13 +18,17 @@ footer{
   padding: 30px;
   position: absolute;
 }
+.mylogo img{
+  width: 150px;
+}
 .container{
   display: flex;
   align-items: center;
   justify-content: flex-end;
   flex-direction: column-reverse;
   padding-top: 6.25rem;
-  
+  min-height: 100px ;
+  padding-bottom: 50px;
 }
 .container .leftside{
   padding-top:3.125rem;
@@ -77,25 +78,25 @@ footer{
   height: 50px;
   margin-top: 2.5rem;
   max-width: 25rem;
-  margin: 0 auto;
+ 
 }
 .container .leftside form input{
-  position: absolute;
   border-radius: 2rem;
   height: 100%;
   width: 100%;
-  padding: 0.2rem 1.5rem;
-  font-family: 'Josefin Sans', sans-serif;
-  border: 1px solid hsl(0, 36%, 70%);
-  outline: none;
-  font-size: 1.1rem;
+  position: absolute;
+	outline: none;
+	border: 1px solid hsl(0, 36%, 70%);
+	padding-left: 1.875rem;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 1.1rem;
   color:hsl(0, 36%, 70%) ;
  
 }
 .container .leftside form label{
   position: absolute;
   visibility: hidden;
-  color:hsl(0, 36%, 70%) ;
+ 
 }
 .container .leftside form button{
   position: absolute;
@@ -109,5 +110,97 @@ footer{
   height: 100%;
   width: 5rem;
   color: white;
+  transition: .3s ease box-shadow;
+}
+.container .leftside form button:hover{
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsla(0, 52%, 80%, 0.781));
+  box-shadow: 0 5px 20px 3px hsl(0, 80%, 86%);
 
+}
+.container .leftside form input::placeholder
+{
+  color:hsl(0, 36%, 70%) ;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.1em;
+  opacity: .6;
+}
+.container .leftside form .textError{
+  position: absolute;
+  left: 30px;
+  text-align: left;
+  top: 40px;
+  display: none;
+  font-size: 16px;
+
+}
+.container .leftside form .theError{
+  display: inline-block;
+  position: absolute;
+  right: 5.313rem;
+  top: 0.24 rem;
+  display: none;
+}
+.container .leftside form.error .theError{
+  display: block;
+
+
+}
+.container .leftside form.error .textError{
+  display: block;
+
+
+}
+.container .leftside form.error input{
+  display: block;
+
+
+}
+@media only screen and (min-width: 750px) {
+	.mylogo {
+		padding-left: 11%;
+	}
+	.container {
+		padding-top: 0;
+		flex-direction: row;
+		padding-bottom: 0;
+	}
+	.container .rightSide {
+		width: 80%;
+		height: 100vh;
+		background-image: url('../images/hero-desktop.jpg');
+	}
+	.container .leftside {
+		padding-top: 25vh;
+		width: 100%;
+		height: 100vh;
+		padding-left: 10%;
+		background-image: url('../images/bg-pattern-desktop.svg');
+		background-size: cover;
+		background-position: center;
+	}
+	.container .leftside h1 {
+		text-align: left;
+		font-size: 5rem;
+		line-height: 5.5rem;
+	}
+	.container .leftside p {
+		margin-left: 0;
+		text-align: left;
+		font-size: 1.1rem;
+	}
+	.container form {
+		margin-left: 0;
+	}
+	.container form button {
+		width: 80px;
+	}
+}
+footer{
+  background-color: hsl(0, 80%, 86%);
+  padding: 5px;
+  margin-top: 2%;
+}
+footer .attribution{
+margin-top: 2%;
+font-size: 16px;
 }
